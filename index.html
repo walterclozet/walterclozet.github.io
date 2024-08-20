@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="王凑一个集贫穷和平胸于一身的肥宅">
+    <meta name="keywords" content="王凑，wang.cou.ink，一个集贫穷和平胸于一身的肥宅">
+    
+    <title>王凑|一个集贫穷和平胸于一身的肥宅</title>
+    <link rel="stylesheet" href="/common.css">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel=”mask-icon” href=”favicon.svg” color=”#000000">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <style>
+		  .card {
+		    background:#fff url('bg.jpg') no-repeat center center;
+		   	background-size: cover;
+		   	z-index: 10;
+		  }
+    </style>
+</head>
+<script>
+window.onload = function() {
+        const button = document.getElementById("enable-notifications");
+    // Add a click event listener
+    button.addEventListener("click", function() {
+      // Request notification permission
+      Notification.requestPermission().then(function(permission) {
+        console.log(permission)
+        window.location.href = "https://wang.cou.ink"
+      })
+    })
+    // Check the permission status
+    if (Notification.permission === "granted") {
+      // Hide the button
+      button.style.display = "none";
+    } else {
+      // Show the button
+      button.style.display = "block";
+    }    
+}
+
+function subs() {
+    navigator.serviceWorker.ready.then((reg) => {
+      reg.pushManager.getSubscription().then((subscription) => {
+        if (subscription) {
+            // Check for support
+            if (navigator.clipboard) {
+              // Copy the string to the clipboard
+              alert(JSON.stringify(subscription));
+            } 
+        } else {
+          // Use the PushManager interface to subscribe to a push service
+          reg.pushManager.subscribe({
+            userVisibleOnly: true,
+            applicationServerKey: 'BFqdjkXXRy_zv-hAjHjHer6URphwSHuNB-0JeNW6ebCOc9v-vKBmY0dbQ6WOJZyFyL_NLTSwQgEDn_XvxvhB4PI'
+          }).then((subscription) => {
+            // The subscription object contains the endpoint and encryption keys
+            console.log(subscription);
+            // Check for support
+            if (navigator.clipboard) {
+              // Copy the string to the clipboard
+              navigator.clipboard.writeText(JSON.stringify(subscription))
+                .then(() => {
+                  console.log("Text copied");
+                })
+                .catch(e => {
+                  console.error("Error copying text", e);
+                });
+            } else {
+                download('info.txt', JSON.stringify(subscription))
+            }            
+          }).catch((error) => {
+          console.error('Error subscribing to push service', error);
+          });
+        }
+      })
+    })
+}
+</script>
+
+<body class="card_body">
+	<input type="hidden" id="domainId" value="b9186e4915204f7da319936cbb8e5472">
+	<input type="hidden" id="nameCardId" value="cdfb5ef1629f4b888a1adbb24f030708">
+	
+		
+		
+		
+			<!--card-->
+		    <div class="card">
+		    	<!-- logo -->
+		    	<!-- <div class="logo">
+		    		
+		    	</div> -->
+		    	<!-- name -->
+		    	<div class="name">
+		    		<span>王凑</span>
+		    	</div>
+
+				<!-- 职位描述 -->
+		    	<div class="describe">
+		    		<pre>一个集贫穷和平胸于一身的肥宅</pre>
+		    	</div>
+
+		    	<!-- 社交信息 -->
+				<ul class="shareNav">
+					<li class="phone" for="phoneDetail">
+						<a href="javascript:void(0);">
+							<span class="icon-phone"></span>
+						</a>
+					</li>
+					
+					
+						
+							<li class="email">
+								<a class="orange" href="javascript:void(0);">
+									<span class="icon-email"></span>
+								</a>
+								<a class="email_main" title="wang@cou.ink" href="mailto:wang@cou.ink">wang@cou.ink</a>
+							</li>
+						
+						
+					
+
+					<li class="weChat" for="weChatDetail">
+						<a href="javascript:void(0);">
+							<span class="icon-weChat"></span>
+						</a>
+					</li>
+					<li class="qq" for="qqDetail">
+						<a href="javascript:void(0);">
+							<span class="icon-qq"></span>
+						</a>
+					</li>
+					<li class="map" for="mapDetail" id="mapApi">
+						<a href="javascript:void(0);">
+							<span class="icon-map"></span>
+						</a>
+					</li>
+
+					
+						
+							<li class="location">
+								<!-- <a href="https://wang.cou.ink" target="_blank"> -->
+									<span class="icon-location"></span>
+								<!-- </a> -->
+								<a class="email_main" title="wang.cou.ink" href="https://wang.cou.ink" target="_blank">wang.cou.ink</a>
+							</li>
+						
+						
+					
+					
+				</ul>
+
+		    	<div class="shareMain">
+					<!-- phone -->
+					<div class="detail phoneDetail">
+						<span class="row_text">手机号码：<a class="text_main" href="tel:+15413578795">+1(541)357-8795</a></span>
+					</div>
+					
+					<!-- email -->
+					<div class="detail emailDetail">
+						<span class="row_text">邮箱：<a class="text_main" href="mailto:wang@cou.ink">wang@cou.ink</a></span>
+					</div>
+
+					<!-- weChat -->
+					<div class="detail weChatDetail">
+						<span class="row_text">微信号<button id="sub_btn" onclick="subs()">：</button><span class="text_main">walterclozet<button id="enable-notifications">N</button></span></span>
+						<p><img src="" alt=""></p>
+					</div>
+
+					<!-- qq -->
+					<div class="detail qqDetail">
+						<span class="row_text">QQ：<span class="text_main">453916104</span></span>
+						<p><img src="" alt=""></p>
+					</div>
+				</div>
+
+				<div class="mark_bg"></div>
+			  	<div id="browsing"></div>
+		    </div>
+    	
+	
+
+	<div class="alMain">
+    	<!-- 内容 -->
+    	
+    </div>
+
+	<script src="/jquery-3.1.1.min.js"></script>
+	<script src="/slider.js"></script>
+        <script type="module" src="app.js"></script>
+</body>
+</html>

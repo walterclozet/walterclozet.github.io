@@ -1,0 +1,36 @@
+{
+  "short_name": "王 凑",
+  "name": "王凑",
+  "icons": [
+    {
+      "src": "/icon192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icon512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    },
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "512x512",
+      "purpose": "any"
+    }
+  ],
+  "id": "https://wang.cou.ink/",
+  "start_url": "https://wang.cou.ink/",
+  "background_color": "#FFFFFF",
+  "display": "standalone",
+  "lang": "zh-CN",
+  "scope": "https://wang.cou.ink/",
+  "theme_color": "#66CCFF",
+  "description": {
+  	"en": "Wang Cou, a man who combines poverty and flat chest in one body",
+  	"ja": "王凑は、貧困と平らな胸を一つの体に組み合わせた男性です",
+  	"zh-Hans": "王凑一个集贫穷和平胸于一身的男子",
+  	"zh-Hant": "王凑一个集贫穷和平胸于一身的男子"
+  }
+}
